@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FYK LASH ET AL | Beauty & Lifestyle</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffafc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.96);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #e8b06a;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e8b06a;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)),
+        url("https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1800&q=80");
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      color: white;
+      padding: 120px 20px 60px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .small-title {
+      color: #e8b06a;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #e8b06a;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #eee;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 28px;
+      margin: 6px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .gold-btn {
+      background: #e8b06a;
+      color: #111;
+    }
+
+    .gold-btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      background: #1ebe5d;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .heading span {
+      color: #c58c43;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .heading h2 {
+      font-size: 40px;
+      margin-top: 10px;
+    }
+
+    .heading p {
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 450px;
+      border-radius: 20px;
+      background:
+        url("https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-text h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .services {
+      background: #111;
+      color: white;
+    }
+
+    .services .heading h2 {
+      color: white;
+    }
+
+    .services .heading p {
+      color: #bbb;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #1b1b1b;
+      border: 1px solid #333;
+      padding: 35px 20px;
+      border-radius: 18px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #e8b06a;
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: #e8b06a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .product-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .product-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .product-card p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .gallery {
+      background: #f4eef1;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      height: 280px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .booking {
+      background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+        url("https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1800&q=80");
+
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .booking h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .booking p {
+      color: #ddd;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.07);
+      text-align: center;
+    }
+
+    .contact-box .icon {
+      font-size: 30px;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 10px;
+      color: #c58c43;
+    }
+
+    .contact-box a {
+      color: #333;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    footer {
+      background: #0b0b0b;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    footer strong {
+      color: #e8b06a;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+
+      nav ul li a {
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 350px;
+      }
+
+      .heading h2 {
+        font-size: 30px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="logo">
+      FYK LASH ET AL
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        Beauty • Lifestyle • Confidence
+      </div>
+
+      <h1>
+        Welcome to
+        <span>FYK LASH ET AL</span>
+      </h1>
+
+      <p>
+        Where beauty meets confidence. Discover premium beauty
+        services and carefully selected lifestyle products
+        designed to make you feel beautiful and confident.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#services" class="btn gold-btn">
+          Explore Services
+        </a>
+
+        <a
+          href="https://wa.me/2348086893364"
+          target="_blank"
+          class="btn whatsapp-btn">
+
+          💬 Book on WhatsApp
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-image"></div>
+
+      <div class="about-text">
+
+        <div class="heading" style="text-align:left; margin-bottom:20px;">
+
+          <span>About Us</span>
+
+          <h2>Beauty That Speaks For You</h2>
+
+        </div>
+
+        <p>
+          FYK LASH ET AL is a beauty and lifestyle brand dedicated
+          to helping you look and feel your absolute best.
+        </p>
+
+        <p>
+          We offer professional beauty services including lash
+          extensions, cluster lashes, nails, tattoos, microblading,
+          pedicures and piercings.
+        </p>
+
+        <p>
+          We also provide beautiful lifestyle products including
+          jewelry, sunshades, lip care products, watches, perfumes,
+          body sprays, waist beads, diffusers and men's boxers.
+        </p>
+
+        <a href="#contact" class="btn gold-btn">
+          Visit Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="services" id="services">
+
+    <div class="heading">
+
+      <span>What We Do</span>
+
+      <h2>Our Beauty Services</h2>
+
+      <p>
+        Professional beauty services created to enhance your beauty.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">👁️</div>
+        <h3>Lash Extension</h3>
+        <p>Get beautiful, attractive lashes customized for your look.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Cluster Lash</h3>
+        <p>Beautiful cluster lashes for an elegant appearance.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💅</div>
+        <h3>Nails</h3>
+        <p>Stylish nail services to complete your beauty look.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🖊️</div>
+        <h3>Tattoo</h3>
+        <p>Creative tattoo services for your unique expression.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌸</div>
+        <h3>Microblading</h3>
+        <p>Beautiful brows designed to complement your face.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🦶</div>
+        <h3>Pedicure</h3>
+        <p>Relaxing pedicure care for beautiful and healthy feet.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💎</div>
+        <h3>Piercing</h3>
+        <p>Professional piercing services for your personal style.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="shop">
+
+    <div class="heading">
+
+      <span>Our Collection</span>
+
+      <h2>Shop With Us</h2>
+
+      <p>
+        Beauty and lifestyle essentials for everyone.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <div class="product-card">
+        <div class="icon">💎</div>
+        <h3>Jewelry</h3>
+        <p>Beautiful jewelry pieces for every occasion.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">🕶️</div>
+        <h3>Sunshades</h3>
+        <p>Stylish sunshades to complete your outfit.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">💄</div>
+        <h3>Lip Care</h3>
+        <p>Quality products for soft and beautiful lips.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">🩲</div>
+        <h3>Men's Boxers</h3>
+        <p>Comfortable and stylish men's underwear.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">⌚</div>
+        <h3>Wrist Watches</h3>
+        <p>Beautiful watches for both men and women.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">🌺</div>
+        <h3>Perfume & Body Spray</h3>
+        <p>Smell amazing and leave a lasting impression.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">📿</div>
+        <h3>Waist Beads</h3>
+        <p>Beautiful waist beads for your personal style.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="icon">🌿</div>
+        <h3>Diffusers</h3>
+        <p>Lovely fragrances for your home and personal space.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="gallery" id="gallery">
+
+    <div class="heading">
+
+      <span>Our Work</span>
+
+      <h2>Beauty Gallery</h2>
+
+      <p>
+        A glimpse of the beauty experience at FYK LASH ET AL.
+      </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
+          alt="Beauty nails">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=900&q=80"
+          alt="Beauty service">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=900&q=80"
+          alt="Beauty products">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="booking">
+
+    <h2>Ready To Glow?</h2>
+
+    <p>
+      Book your beauty appointment or contact us about our products.
+      We'd love to make your beauty experience special.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        href="https://wa.me/2348086893364"
+        target="_blank"
+        class="btn whatsapp-btn">
+
+        💬 WhatsApp Us
+
+      </a>
+
+      <a
+        href="tel:+2347072212852"
+        class="btn gold-btn">
+
+        📞 Call Us
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section id="contact">
+
+    <div class="heading">
+
+      <span>Get In Touch</span>
+
+      <h2>Contact FYK LASH ET AL</h2>
+
+      <p>
+        Visit us, call us or send us a WhatsApp message.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <div class="icon">📞</div>
+
+        <h3>Call Us</h3>
+
+        <a href="tel:+2347072212852">
+          +234 707 221 2852
+        </a>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <div class="icon">💬</div>
+
+        <h3>WhatsApp</h3>
+
+        <a
+          href="https://wa.me/2348086893364"
+          target="_blank">
+
+          08086893364
+
+        </a>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <div class="icon">📍</div>
+
+        <h3>Location</h3>
+
+        <p>
+          Express, opposite Ikosi Junction,
+          Ilaro, Ogun State, Nigeria.
+        </p>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <div class="icon">📧</div>
+
+        <h3>Email</h3>
+
+        <a href="mailto:Sundayblessingayomiposi@gmail.com">
+
+          Sundayblessingayomiposi@gmail.com
+
+        </a>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <div class="icon">🎵</div>
+
+        <h3>TikTok</h3>
+
+        <a
+          href="https://www.tiktok.com/@fyk_lash_et_al"
+          target="_blank">
+
+          FYK LASH ET AL
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <p>
+      © 2026 <strong>FYK LASH ET AL</strong>.
+      All Rights Reserved.
+    </p>
+
+    <p>
+      Beauty • Lifestyle • Confidence
+    </p>
+
+  </footer>
+
+</body>
+</html>
